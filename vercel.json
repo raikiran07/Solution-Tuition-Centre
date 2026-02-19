@@ -1,50 +1,21 @@
 {
-  "version": 2,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*\\.css)",
-      "dest": "/$1"
+      "source": "/about",
+      "destination": "/about.html"
     },
     {
-      "src": "/(.*\\.js)",
-      "dest": "/$1"
+      "source": "/programs",
+      "destination": "/programs.html"
     },
     {
-      "src": "/(.*\\.html)",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*\\.(png|jpg|jpeg|gif|svg|ico|webp))",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*\\.(woff|woff2|ttf|eot))",
-      "dest": "/$1"
-    },
-    {
-      "src": "/about",
-      "dest": "/about.html"
-    },
-    {
-      "src": "/programs",
-      "dest": "/programs.html"
-    },
-    {
-      "src": "/contact",
-      "dest": "/contact.html"
-    },
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/contact",
+      "destination": "/contact.html"
     }
   ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/(.*)\\.(css|js|jpg|jpeg|png|gif|svg|ico|webp|woff|woff2|ttf|eot)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -53,7 +24,7 @@
       ]
     },
     {
-      "source": "/(.*\\.html)",
+      "source": "/(.*)\\.html",
       "headers": [
         {
           "key": "Cache-Control",

@@ -1,10 +1,14 @@
 // Mobile Menu Toggle
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
+const navActions = document.querySelector('.nav-actions');
 
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
+        if (navActions) {
+            navActions.classList.toggle('active');
+        }
         const icon = mobileMenuToggle.querySelector('i');
         if (navMenu.classList.contains('active')) {
             icon.classList.remove('fa-bars');
@@ -21,6 +25,9 @@ document.addEventListener('click', (e) => {
     if (navMenu && navMenu.classList.contains('active')) {
         if (!e.target.closest('.nav-container')) {
             navMenu.classList.remove('active');
+            if (navActions) {
+                navActions.classList.remove('active');
+            }
             const icon = mobileMenuToggle.querySelector('i');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');

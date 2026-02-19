@@ -29,13 +29,22 @@ const HeroSection = () => {
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight mb-4">
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight mb-2"
+          >
+            <span className="inline-block bg-secondary/20 border-2 border-secondary px-4 py-1 rounded-xl text-secondary mb-3 text-3xl md:text-4xl lg:text-5xl shadow-lg shadow-secondary/20">
+              SOLUTION Tuition Centre
+            </span>
+            <br />
             Excellence in Education{" "}
             <span className="text-secondary">Since 1995</span>
-          </h1>
+          </motion.h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-4 font-medium">
-            SOLUTION Tuition Centre — Guwahati's Most Trusted Name in Home Tuition
+            Guwahati's Most Trusted Name in Home Tuition
           </p>
 
           <p className="text-primary-foreground/60 mb-8 max-w-xl leading-relaxed">

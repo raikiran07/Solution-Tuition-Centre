@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
-import { programs } from "@/data/programs";
+import { getProgramsData } from "@/data/programsData";
 import { BookOpen, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const Programs = () => {
+  const { t } = useTranslation();
+  const programs = getProgramsData(t);
+
   return (
     <>
       {/* Hero */}
@@ -11,10 +15,10 @@ const Programs = () => {
         <div className="container mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-4xl md:text-5xl font-extrabold text-primary-foreground mb-4">
-              Our <span className="text-secondary">Programs</span>
+              {t("programs.title")} <span className="text-secondary">{t("programs.titleHighlight")}</span>
             </h1>
             <p className="text-primary-foreground/70 text-lg max-w-xl mx-auto">
-              Tailored coaching for every academic stage — from primary foundation to board exam mastery.
+              {t("programs.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -66,7 +70,7 @@ const Programs = () => {
             to="/contact"
             className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-7 py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity"
           >
-            Enroll Now — Book a Free Demo
+            {t("programs.enrollNow")}
           </Link>
         </div>
       </section>

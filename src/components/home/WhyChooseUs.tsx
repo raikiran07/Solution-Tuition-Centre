@@ -1,49 +1,52 @@
 import { motion } from "framer-motion";
 import { GraduationCap, TrendingUp, Trophy, BookOpen, Lightbulb, Handshake } from "lucide-react";
-
-const features = [
-  {
-    icon: GraduationCap,
-    title: "Exceptional Faculty",
-    description: "Highly qualified and experienced teachers passionate about student success with proven teaching methodology.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Proven Track Record",
-    description: "Consistently excellent results with students showing remarkable improvement in their academics.",
-  },
-  {
-    icon: Trophy,
-    title: "Trusted by 100+ Families",
-    description: "Join satisfied parents who've witnessed transformation in their children's academic performance. 5-star rated.",
-  },
-  {
-    icon: BookOpen,
-    title: "Comprehensive Subjects",
-    description: "Expert coaching across all subjects from Mathematics to Science, Languages to Social Studies.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Simple Teaching Methods",
-    description: "We break down complex topics into easy-to-understand concepts, making learning engaging and effective.",
-  },
-  {
-    icon: Handshake,
-    title: "Supportive Environment",
-    description: "A nurturing space where students feel confident to ask questions and grow at their own pace.",
-  },
-];
+import { useTranslation } from "@/hooks/useTranslation";
 
 const WhyChooseUs = () => {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: GraduationCap,
+      title: t("whyChooseUs.faculty.title"),
+      description: t("whyChooseUs.faculty.description"),
+    },
+    {
+      icon: TrendingUp,
+      title: t("whyChooseUs.trackRecord.title"),
+      description: t("whyChooseUs.trackRecord.description"),
+    },
+    {
+      icon: Trophy,
+      title: t("whyChooseUs.trusted.title"),
+      description: t("whyChooseUs.trusted.description"),
+    },
+    {
+      icon: BookOpen,
+      title: t("whyChooseUs.subjects.title"),
+      description: t("whyChooseUs.subjects.description"),
+    },
+    {
+      icon: Lightbulb,
+      title: t("whyChooseUs.methods.title"),
+      description: t("whyChooseUs.methods.description"),
+    },
+    {
+      icon: Handshake,
+      title: t("whyChooseUs.environment.title"),
+      description: t("whyChooseUs.environment.description"),
+    },
+  ];
+
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-            Why Choose <span className="text-primary">SOLUTION</span> Tuition Centre?
+            {t("whyChooseUs.title")} <span className="text-primary">{t("whyChooseUs.titleHighlight")}</span> {t("whyChooseUs.titleSuffix")}
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Your child's success is our mission. Here's what makes us different.
+            {t("whyChooseUs.subtitle")}
           </p>
         </div>
 
@@ -68,6 +71,6 @@ const WhyChooseUs = () => {
       </div>
     </section>
   );
-};
+}
 
 export default WhyChooseUs;

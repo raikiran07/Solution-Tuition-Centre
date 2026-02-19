@@ -1,22 +1,25 @@
 import { motion } from "framer-motion";
 import { ClipboardList, Users, BookOpen, TrendingUp } from "lucide-react";
-
-const steps = [
-  { icon: ClipboardList, title: "Inquire", description: "Contact us via phone, WhatsApp, or fill out our enquiry form." },
-  { icon: Users, title: "Consultation", description: "We understand your child's needs and recommend the best plan." },
-  { icon: BookOpen, title: "Free Demo Class", description: "Experience our teaching methodology with a free trial class." },
-  { icon: TrendingUp, title: "Start Learning", description: "Enroll and watch your child's academic performance soar." },
-];
+import { useTranslation } from "@/hooks/useTranslation";
 
 const HowItWorks = () => {
+  const { t } = useTranslation();
+
+  const steps = [
+    { icon: ClipboardList, title: t("howItWorks.steps.inquire.title"), description: t("howItWorks.steps.inquire.description") },
+    { icon: Users, title: t("howItWorks.steps.consultation.title"), description: t("howItWorks.steps.consultation.description") },
+    { icon: BookOpen, title: t("howItWorks.steps.demo.title"), description: t("howItWorks.steps.demo.description") },
+    { icon: TrendingUp, title: t("howItWorks.steps.start.title"), description: t("howItWorks.steps.start.description") },
+  ];
+
   return (
     <section className="py-16 md:py-24 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-            How It <span className="text-primary">Works</span>
+            {t("howItWorks.title")} <span className="text-primary">{t("howItWorks.titleHighlight")}</span>
           </h2>
-          <p className="text-muted-foreground">Getting started is simple.</p>
+          <p className="text-muted-foreground">{t("howItWorks.subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -43,6 +46,6 @@ const HowItWorks = () => {
       </div>
     </section>
   );
-};
+}
 
 export default HowItWorks;

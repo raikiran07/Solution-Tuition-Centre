@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Star, Award, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Background */}
@@ -22,10 +25,10 @@ const HeroSection = () => {
           {/* Trust badges */}
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span className="inline-flex items-center gap-1.5 bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-medium">
-              <Star className="w-4 h-4 fill-secondary" /> 5.0 Rated
+              <Star className="w-4 h-4 fill-secondary" /> {t("hero.rated")}
             </span>
             <span className="inline-flex items-center gap-1.5 bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-medium">
-              <Award className="w-4 h-4" /> 24+ Years of Excellence
+              <Award className="w-4 h-4" /> {t("hero.excellence")}
             </span>
           </div>
 
@@ -36,19 +39,19 @@ const HeroSection = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-foreground leading-tight mb-2"
           >
             <span className="inline-block bg-secondary/20 border-2 border-secondary px-4 py-1 rounded-xl text-secondary mb-3 text-3xl md:text-4xl lg:text-5xl shadow-lg shadow-secondary/20">
-              SOLUTION Tuition Centre
+              {t("hero.title")}
             </span>
             <br />
-            Excellence in Education{" "}
-            <span className="text-secondary">Since 1995</span>
+            {t("hero.subtitle")}{" "}
+            <span className="text-secondary">{t("hero.since")}</span>
           </motion.h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-4 font-medium">
-            Guwahati's Most Trusted Name in Home Tuition
+            {t("hero.tagline")}
           </p>
 
           <p className="text-primary-foreground/60 mb-8 max-w-xl leading-relaxed">
-            Personalized coaching for Classes 1-12 • CBSE, ICSE & State Board • Experienced Faculty • Proven Results
+            {t("hero.description")}
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -56,13 +59,13 @@ const HeroSection = () => {
               to="/contact"
               className="bg-secondary text-secondary-foreground px-7 py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity text-base"
             >
-              Book Free Demo Class
+              {t("hero.bookDemo")}
             </Link>
             <Link
               to="/programs"
               className="border-2 border-primary-foreground/30 text-primary-foreground px-7 py-3.5 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors text-base"
             >
-              View Our Programs
+              {t("hero.viewPrograms")}
             </Link>
           </div>
         </motion.div>

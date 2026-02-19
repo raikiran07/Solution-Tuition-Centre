@@ -1,18 +1,22 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { programs } from "@/data/programs";
+import { getProgramsData } from "@/data/programsData";
 import { BookOpen, ArrowRight } from "lucide-react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const ProgramsSection = () => {
+  const { t } = useTranslation();
+  const programs = getProgramsData(t);
+
   return (
     <section className="py-16 md:py-24 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-            Our <span className="text-primary">Programs</span>
+            {t("programs.title")} <span className="text-primary">{t("programs.titleHighlight")}</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Comprehensive coaching tailored for every academic stage.
+            {t("programs.subtitle")}
           </p>
         </div>
 
@@ -55,12 +59,12 @@ const ProgramsSection = () => {
             to="/programs"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
           >
-            View All Programs <ArrowRight className="w-4 h-4" />
+            {t("programs.viewAll")} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default ProgramsSection;

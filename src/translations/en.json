@@ -1,0 +1,268 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About Us",
+    "programs": "Programs",
+    "contact": "Contact Us",
+    "callUs": "Call Us Now"
+  },
+  "hero": {
+    "rated": "5.0 Rated",
+    "excellence": "24+ Years of Excellence",
+    "title": "SOLUTION Tuition Centre",
+    "subtitle": "Excellence in Education",
+    "since": "Since 1995",
+    "tagline": "Guwahati's Most Trusted Name in Home Tuition",
+    "description": "Personalized coaching for Classes 1-12 • CBSE, ICSE & State Board • Experienced Faculty • Proven Results",
+    "bookDemo": "Book Free Demo Class",
+    "viewPrograms": "View Our Programs"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose",
+    "titleHighlight": "SOLUTION",
+    "titleSuffix": "Tuition Centre?",
+    "subtitle": "Your child's success is our mission. Here's what makes us different.",
+    "faculty": {
+      "title": "Exceptional Faculty",
+      "description": "Highly qualified and experienced teachers passionate about student success with proven teaching methodology."
+    },
+    "trackRecord": {
+      "title": "Proven Track Record",
+      "description": "Consistently excellent results with students showing remarkable improvement in their academics."
+    },
+    "trusted": {
+      "title": "Trusted by 100+ Families",
+      "description": "Join satisfied parents who've witnessed transformation in their children's academic performance. 5-star rated."
+    },
+    "subjects": {
+      "title": "Comprehensive Subjects",
+      "description": "Expert coaching across all subjects from Mathematics to Science, Languages to Social Studies."
+    },
+    "methods": {
+      "title": "Simple Teaching Methods",
+      "description": "We break down complex topics into easy-to-understand concepts, making learning engaging and effective."
+    },
+    "environment": {
+      "title": "Supportive Environment",
+      "description": "A nurturing space where students feel confident to ask questions and grow at their own pace."
+    }
+  },
+  "programs": {
+    "title": "Our",
+    "titleHighlight": "Programs",
+    "subtitle": "Comprehensive coaching tailored for every academic stage.",
+    "viewAll": "View All Programs",
+    "primary": {
+      "title": "Primary Section",
+      "subtitle": "Classes 1-5",
+      "description": "Foundation building in core subjects with interactive learning methods.",
+      "features": [
+        "Foundation building in core subjects",
+        "Focus on conceptual understanding",
+        "Interactive learning methods",
+        "Regular parent-teacher communication"
+      ],
+      "subjects": "Mathematics,English,Science,EVS,Hindi"
+    },
+    "middle": {
+      "title": "Middle School",
+      "subtitle": "Classes 6-8",
+      "description": "Strengthening fundamentals with exam preparation techniques.",
+      "features": [
+        "Strengthening fundamentals",
+        "Exam preparation techniques",
+        "Homework assistance",
+        "Doubt clearing sessions"
+      ],
+      "subjects": "Mathematics,Science,English,Social Studies,Languages"
+    },
+    "secondary": {
+      "title": "Secondary",
+      "subtitle": "Classes 9-10",
+      "description": "Board exam preparation with comprehensive revision and practice.",
+      "features": [
+        "Board exam preparation",
+        "Previous year papers practice",
+        "Time management skills",
+        "Comprehensive revision"
+      ],
+      "subjects": "Mathematics,Science,English,Social Studies,Sanskrit/Hindi"
+    },
+    "senior": {
+      "title": "Senior Secondary",
+      "subtitle": "Classes 11-12",
+      "description": "Specialized stream coaching with competitive exam guidance.",
+      "features": [
+        "Specialized stream coaching (Science/Commerce/Arts)",
+        "Competitive exam guidance",
+        "Board exam strategies",
+        "College application support"
+      ],
+      "subjects": "Physics,Chemistry,Biology,Mathematics,Accountancy,Economics,History,Political Science"
+    },
+    "enrollNow": "Enroll Now — Book a Free Demo"
+  },
+  "howItWorks": {
+    "title": "How It",
+    "titleHighlight": "Works",
+    "subtitle": "Getting started is simple.",
+    "steps": {
+      "inquire": {
+        "title": "Inquire",
+        "description": "Contact us via phone, WhatsApp, or fill out our enquiry form."
+      },
+      "consultation": {
+        "title": "Consultation",
+        "description": "We understand your child's needs and recommend the best plan."
+      },
+      "demo": {
+        "title": "Free Demo Class",
+        "description": "Experience our teaching methodology with a free trial class."
+      },
+      "start": {
+        "title": "Start Learning",
+        "description": "Enroll and watch your child's academic performance soar."
+      }
+    }
+  },
+  "testimonials": {
+    "title": "What Parents",
+    "titleHighlight": "Say About Us",
+    "subtitle": "Real feedback from our satisfied parent community",
+    "items": [
+      {
+        "quote": "The faculty is exceptional and their passion for teaching is truly inspiring. This institute exceeded my expectations with their excellent faculty, personalized approach, and outstanding results. My child's progress has been remarkable!",
+        "author": "Mrs. Sharma",
+        "role": "Parent of Aarav, Class 10"
+      },
+      {
+        "quote": "I had an exceptional experience at SOLUTION Tuition Centre. The tutors are highly qualified and passionate about teaching. They provided personalized attention, creating a supportive learning environment. I highly recommend!",
+        "author": "Mr. Rajesh Kumar",
+        "role": "Parent of Priya, Class 8"
+      },
+      {
+        "quote": "One of the best tuition centers in Guwahati with a unique teaching method and experienced teachers providing education in a simple manner. Your kids deserve better education - this is the place!",
+        "author": "Mrs. Devi",
+        "role": "Parent of Rohan, Class 12"
+      },
+      {
+        "quote": "The best tuition center! My experience was really good. The teaching quality, faculty behavior, and attention to each student is outstanding. Highly recommended!",
+        "author": "Mr. Bora",
+        "role": "Parent of Ananya, Class 9"
+      }
+    ]
+  },
+  "contactCTA": {
+    "title": "Ready to Transform Your Child's Future?",
+    "subtitle": "Join 100+ families who trust SOLUTION Tuition Centre for their child's education. Book a free demo class today!",
+    "bookDemo": "Book Free Demo",
+    "callNow": "Call Us Now"
+  },
+  "about": {
+    "title": "About",
+    "titleHighlight": "SOLUTION",
+    "subtitle": "24+ years of shaping academic futures in Guwahati with dedication, passion, and proven results.",
+    "story": {
+      "title": "Our Story",
+      "p1": "Founded in 1995, SOLUTION Tuition Centre began with a simple mission: to provide quality, personalized education to every student in Guwahati. What started as a small initiative has grown into one of the city's most trusted names in home tuition.",
+      "p2": "Over 24 years, we've helped hundreds of students achieve academic excellence across CBSE, ICSE, and Assam State Boards. Our approach combines experienced faculty, proven teaching methods, and genuine care for each student's progress.",
+      "p3": "Today, with a 5.0-star rating and over 93 glowing reviews, we continue to uphold the values that made us a household name — dedication, simplicity, and results."
+    },
+    "values": {
+      "title": "Our Core Values",
+      "excellence": {
+        "title": "Excellence",
+        "description": "Committed to the highest standards of teaching and learning."
+      },
+      "passion": {
+        "title": "Passion",
+        "description": "Every teacher brings genuine care and enthusiasm to the classroom."
+      },
+      "attention": {
+        "title": "Personalized Attention",
+        "description": "Small batch sizes ensure every student gets focused guidance."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "description": "Honest assessment and transparent communication with parents."
+      },
+      "holistic": {
+        "title": "Holistic Development",
+        "description": "Nurturing not just academics but confidence and character."
+      },
+      "improvement": {
+        "title": "Continuous Improvement",
+        "description": "Regular training and updated teaching methodologies."
+      }
+    }
+  },
+  "contact": {
+    "title": "Get In",
+    "titleHighlight": "Touch",
+    "subtitle": "We'd love to hear from you. Request a callback or book a free demo class today.",
+    "form": {
+      "title": "Request a Callback",
+      "parentName": "Parent's Name",
+      "phone": "Phone Number",
+      "email": "Email",
+      "studentClass": "Student's Class",
+      "selectClass": "Select class",
+      "subjects": "Subjects of Interest",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your requirements...",
+      "submit": "Request Callback",
+      "sending": "Sending...",
+      "success": "Thank you! We'll contact you soon.",
+      "error": "Please fill in all required fields."
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "House No - 8, Arohan Path, South Sarania, Sarania Hills, Guwahati, Assam 781007",
+      "hours": "Open 24/7 (For Inquiries)"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "What are your class timings?",
+          "answer": "We offer flexible timings to accommodate students' school schedules. Classes are available throughout the day and evening."
+        },
+        {
+          "question": "Do you provide home tuition?",
+          "answer": "Yes, we provide both center-based and home tuition services across Guwahati."
+        },
+        {
+          "question": "What is your fee structure?",
+          "answer": "Fees vary based on class, subjects, and format (individual/group). Contact us for customized packages tailored to your needs."
+        },
+        {
+          "question": "Do you offer demo classes?",
+          "answer": "Yes! We offer free demo classes so students can experience our teaching methodology before enrolling."
+        },
+        {
+          "question": "Which boards do you cater to?",
+          "answer": "We provide coaching for CBSE, ICSE, and Assam State Board students."
+        },
+        {
+          "question": "How do you ensure quality teaching?",
+          "answer": "Our faculty undergoes regular training, and we maintain small batch sizes for personalized attention. We also conduct regular assessments to track progress."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "tagline": "Guwahati's Most Trusted Home Tuition providing quality education since 1995.",
+    "reviews": "5.0 (93+ Reviews)",
+    "quickLinks": "Quick Links",
+    "ourPrograms": "Our Programs",
+    "contactInfo": "Contact Info",
+    "copyright": "© 2025 SOLUTION Tuition Centre. All Rights Reserved.",
+    "programsList": {
+      "primary": "Primary Classes (1-5)",
+      "middle": "Middle School (6-8)",
+      "secondary": "Secondary (9-10)",
+      "senior": "Senior Secondary (11-12)",
+      "board": "Board Exam Coaching"
+    }
+  }
+}

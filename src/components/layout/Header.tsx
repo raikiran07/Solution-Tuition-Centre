@@ -2,16 +2,19 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "About Us", path: "/about" },
-  { name: "Programs", path: "/programs" },
-  { name: "Contact Us", path: "/contact" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "@/components/shared/LanguageToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { name: t("header.home"), path: "/" },
+    { name: t("header.about"), path: "/about" },
+    { name: t("header.programs"), path: "/programs" },
+    { name: t("header.contact"), path: "/contact" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
@@ -26,7 +29,7 @@ const Header = () => {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
@@ -42,12 +45,13 @@ const Header = () => {
                 {link.name}
               </NavLink>
             ))}
+            <LanguageToggle />
             <a
               href="tel:+91XXXXXXXXXX"
               className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
             >
               <Phone className="w-4 h-4" />
-              Call Us Now
+              {t("header.callUs")}
             </a>
           </nav>
 
@@ -85,12 +89,15 @@ const Header = () => {
                     {link.name}
                   </NavLink>
                 ))}
+                <div className="px-2 py-2">
+                  <LanguageToggle />
+                </div>
                 <a
                   href="tel:+91XXXXXXXXXX"
                   className="flex items-center gap-2 mt-3 bg-secondary text-secondary-foreground px-5 py-3 rounded-lg text-sm font-semibold justify-center"
                 >
                   <Phone className="w-4 h-4" />
-                  Call Us Now
+                  {t("header.callUs")}
                 </a>
               </div>
             </motion.div>

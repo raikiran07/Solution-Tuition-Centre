@@ -1,30 +1,33 @@
 import { useState } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { testimonials } from "@/data/testimonials";
+import { getTestimonialsData } from "@/data/testimonialsData";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const TestimonialsSection = () => {
+  const { t } = useTranslation();
+  const testimonials = getTestimonialsData(t);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const next = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
-  const t = testimonials[currentIndex];
+  const currentTestimonial = testimonials[currentIndex];
 
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-            What Parents <span className="text-primary">Say About Us</span>
+            {t("testimonials.title")} <span className="text-primary">{t("testimonials.titleHighlight")}</span>
           </h2>
-          <p className="text-muted-foreground">Real feedback from our satisfied parent community</p>
+          <p className="text-muted-foreground">{t("testimonials.subtitle")}</p>
         </div>
 
         <div className="max-w-2xl mx-auto relative">
           <AnimatePresence mode="wait">
             <motion.div
-              key={t.id}
+              key={currentTestimonial.id}
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -30 }}
@@ -37,15 +40,15 @@ const TestimonialsSection = () => {
                 ))}
               </div>
               <blockquote className="text-foreground text-base md:text-lg leading-relaxed mb-6 italic">
-                "{t.quote}"
+                "{currentTestimonial.quote}"
               </blockquote>
               <div className="flex items-center justify-center gap-3">
                 <div className="w-11 h-11 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
-                  {t.initials}
+                  {currentTestimonial.initials}
                 </div>
                 <div className="text-left">
-                  <p className="font-semibold text-foreground text-sm">{t.author}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                  <p className="font-semibold text-foreground text-sm">{currentTestimonial.author}</p>
+                  <p className="text-xs text-muted-foreground">{currentTestimonial.role}</p>
                 </div>
               </div>
             </motion.div>
@@ -84,6 +87,6 @@ const TestimonialsSection = () => {
       </div>
     </section>
   );
-};
+}
 
 export default TestimonialsSection;

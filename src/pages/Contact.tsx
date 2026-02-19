@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send, ChevronDown, ChevronUp } from "lucide-react";
-import { faqs } from "@/data/faqs";
+import { getFaqsData } from "@/data/faqsData";
 import { toast } from "sonner";
-
-const subjectsList = ["Mathematics", "Science", "English", "Social Studies", "Hindi", "Sanskrit", "Computer Science"];
+import { useTranslation } from "@/hooks/useTranslation";
 
 const Contact = () => {
+  const { t } = useTranslation();
+  const faqs = getFaqsData(t);
+  
+  const subjectsList = ["Mathematics", "Science", "English", "Social Studies", "Hindi", "Sanskrit", "Computer Science"];
+  
   const [formData, setFormData] = useState({
     parentName: "",
     phone: "",
@@ -34,13 +38,13 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.parentName.trim() || !formData.phone.trim() || !formData.studentClass) {
-      toast.error("Please fill in all required fields.");
+      toast.error(t("contact.form.error"));
       return;
     }
     setIsSubmitting(true);
     // Simulate submission
     setTimeout(() => {
-      toast.success("Thank you! We'll contact you soon.");
+      toast.success(t("contact.form.success"));
       setFormData({ parentName: "", phone: "", email: "", studentClass: "", subjects: [], message: "" });
       setIsSubmitting(false);
     }, 1000);
@@ -53,10 +57,10 @@ const Contact = () => {
         <div className="container mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-4xl md:text-5xl font-extrabold text-primary-foreground mb-4">
-              Get In <span className="text-secondary">Touch</span>
+              {t("contact.title")} <span className="text-secondary">{t("contact.titleHighlight")}</span>
             </h1>
             <p className="text-primary-foreground/70 text-lg max-w-xl mx-auto">
-              We'd love to hear from you. Request a callback or book a free demo class today.
+              {t("contact.subtitle")}
             </p>
           </motion.div>
         </div>
@@ -67,10 +71,10 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Form */}
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
-              <h2 className="text-2xl font-bold text-foreground mb-6">Request a Callback</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">{t("contact.form.title")}</h2>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">Parent's Name *</label>
+                  <label className="block text-sm font-medium text-foreground mb-1">{t("contact.form.parentName")} *</label>
                   <input
                     name="parentName"
                     value={formData.parentName}
@@ -81,7 +85,7 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">Phone Number *</label>
+                  <label className="block text-sm font-medium text-foreground mb-1">{t("contact.form.phone")} *</label>
                   <input
                     name="phone"
                     type="tel"
@@ -93,7 +97,7 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">Email</label>
+                  <label className="block text-sm font-medium text-foreground mb-1">{t("contact.form.email")}</label>
                   <input
                     name="email"
                     type="email"
@@ -104,7 +108,7 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">Student's Class *</label>
+                  <label className="block text-sm font-medium text-foreground mb-1">{t("contact.form.studentClass")} *</label>
                   <select
                     name="studentClass"
                     value={formData.studentClass}
@@ -112,14 +116,14 @@ const Contact = () => {
                     className="w-full border border-input rounded-lg px-4 py-2.5 text-sm bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent outline-none"
                     required
                   >
-                    <option value="">Select class</option>
+                    <option value="">{t("contact.form.selectClass")}</option>
                     {[...Array(12)].map((_, i) => (
                       <option key={i + 1} value={String(i + 1)}>Class {i + 1}</option>
                     ))}
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Subjects of Interest</label>
+                  <label className="block text-sm font-medium text-foreground mb-2">{t("contact.form.subjects")}</label>
                   <div className="flex flex-wrap gap-2">
                     {subjectsList.map((subj) => (
                       <label
@@ -142,14 +146,14 @@ const Contact = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">Message</label>
+                  <label className="block text-sm font-medium text-foreground mb-1">{t("contact.form.message")}</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
                     className="w-full border border-input rounded-lg px-4 py-2.5 text-sm bg-background text-foreground focus:ring-2 focus:ring-ring focus:border-transparent outline-none resize-none"
-                    placeholder="Tell us about your requirements..."
+                    placeholder={t("contact.form.messagePlaceholder")}
                   />
                 </div>
                 <button
@@ -158,7 +162,7 @@ const Contact = () => {
                   className="w-full bg-secondary text-secondary-foreground py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-60"
                 >
                   <Send className="w-4 h-4" />
-                  {isSubmitting ? "Sending..." : "Request Callback"}
+                  {isSubmitting ? t("contact.form.sending") : t("contact.form.submit")}
                 </button>
               </form>
             </motion.div>
@@ -166,12 +170,12 @@ const Contact = () => {
             {/* Contact Info + Map */}
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
               <div>
-                <h2 className="text-2xl font-bold text-foreground mb-6">Contact Information</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-6">{t("contact.info.title")}</h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                     <p className="text-sm text-muted-foreground">
-                      House No - 8, Arohan Path, South Sarania, Sarania Hills, Guwahati, Assam 781007
+                      {t("contact.info.address")}
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
@@ -188,7 +192,7 @@ const Contact = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-primary shrink-0" />
-                    <p className="text-sm text-muted-foreground">Open 24/7 (For Inquiries)</p>
+                    <p className="text-sm text-muted-foreground">{t("contact.info.hours")}</p>
                   </div>
                 </div>
               </div>
@@ -214,7 +218,7 @@ const Contact = () => {
       {/* FAQs */}
       <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">{t("contact.faq.title")}</h2>
           <div className="space-y-3">
             {faqs.map((faq) => (
               <div key={faq.id} className="bg-card rounded-xl border border-border overflow-hidden">

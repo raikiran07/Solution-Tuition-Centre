@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switcher Demo - SOLUTION Tuition Centre</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .demo-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .demo-header h1 {
+            color: #1E3A8A;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .demo-header p {
+            color: #6B7280;
+            font-size: 16px;
+        }
+        
+        .language-demo {
+            background: #F9FAFB;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .lang-switcher-demo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .lang-btn-demo {
+            background-color: transparent;
+            border: 2px solid #1E3A8A;
+            color: #1E3A8A;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn-demo:hover {
+            background-color: #1E3A8A;
+            color: white;
+        }
+        
+        .content-demo {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #F59E0B;
+        }
+        
+        .content-demo h2 {
+            color: #1E3A8A;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .content-demo p {
+            color: #6B7280;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .feature-list {
+            background: #EFF6FF;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .feature-list h3 {
+            color: #1E3A8A;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .feature-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            color: #374151;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10B981;
+            font-weight: bold;
+        }
+        
+        .translation-example {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .translation-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #E5E7EB;
+        }
+        
+        .translation-box h4 {
+            color: #1E3A8A;
+            margin-bottom: 10px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .translation-box p {
+            color: #374151;
+            font-size: 14px;
+        }
+        
+        .flag {
+            font-size: 20px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #E5E7EB;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: #F59E0B;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: #D97706;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+        }
+        
+        @media (max-width: 600px) {
+            .translation-example {
+                grid-template-columns: 1fr;
+            }
+            
+            .demo-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>🌐 Bilingual Language Switcher</h1>
+            <p>English ⇄ Assamese (অসমীয়া)</p>
+        </div>
+        
+        <div class="language-demo">
+            <div class="lang-switcher-demo">
+                <button class="lang-btn-demo" id="demoToggle">
+                    <span style="font-size: 20px;">🌍</span>
+                    <span id="demoLangText">অসমীয়া</span>
+                </button>
+            </div>
+            
+            <div class="content-demo">
+                <h2 id="demoTitle" data-en="Excellence in Education Since 1995" data-as="1995 চনৰ পৰা শিক্ষাত উৎকৰ্ষতা">Excellence in Education Since 1995</h2>
+                <p id="demoDesc" data-en="SOLUTION Tuition Centre - Guwahati's Most Trusted Name in Home Tuition" data-as="SOLUTION টিউচন চেণ্টাৰ - গুৱাহাটীৰ সৰ্বাধিক বিশ্বাসযোগ্য গৃহ শিক্ষা">SOLUTION Tuition Centre - Guwahati's Most Trusted Name in Home Tuition</p>
+                <p id="demoText" data-en="Personalized coaching for Classes 1-12 with experienced faculty and proven results." data-as="শ্ৰেণী 1-12 ৰ বাবে অভিজ্ঞ শিক্ষক আৰু প্ৰমাণিত ফলাফলৰ সৈতে ব্যক্তিগত প্ৰশিক্ষণ।">Personalized coaching for Classes 1-12 with experienced faculty and proven results.</p>
+            </div>
+        </div>
+        
+        <div class="feature-list">
+            <h3>✨ Key Features</h3>
+            <ul>
+                <li>Instant language switching without page reload</li>
+                <li>User preference saved in browser</li>
+                <li>Comprehensive translations across all pages</li>
+                <li>Mobile-responsive design</li>
+                <li>Smooth transition animations</li>
+                <li>SEO-friendly implementation</li>
+            </ul>
+        </div>
+        
+        <div class="translation-example">
+            <div class="translation-box">
+                <h4><span class="flag">🇬🇧</span> English</h4>
+                <p><strong>Book Free Demo Class</strong></p>
+                <p>Contact us for customized packages</p>
+                <p>Trusted by 100+ Families</p>
+            </div>
+            <div class="translation-box">
+                <h4><span class="flag">🇮🇳</span> অসমীয়া (Assamese)</h4>
+                <p><strong>বিনামূলীয়া ডেমো ক্লাছ বুক কৰক</strong></p>
+                <p>কাষ্টমাইজড পেকেজৰ বাবে যোগাযোগ কৰক</p>
+                <p>100+ পৰিয়ালৰ বিশ্বাস</p>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <p style="color: #6B7280; margin-bottom: 15px;">Ready to see it in action?</p>
+            <a href="index.html" class="cta-btn">View Full Website →</a>
+        </div>
+    </div>
+    
+    <script>
+        let demoLang = 'en';
+        const demoToggle = document.getElementById('demoToggle');
+        const demoLangText = document.getElementById('demoLangText');
+        const demoTitle = document.getElementById('demoTitle');
+        const demoDesc = document.getElementById('demoDesc');
+        const demoText = document.getElementById('demoText');
+        
+        demoToggle.addEventListener('click', () => {
+            demoLang = demoLang === 'en' ? 'as' : 'en';
+            
+            // Update button text
+            demoLangText.textContent = demoLang === 'en' ? 'অসমীয়া' : 'English';
+            
+            // Update content
+            demoTitle.textContent = demoTitle.getAttribute('data-' + demoLang);
+            demoDesc.textContent = demoDesc.getAttribute('data-' + demoLang);
+            demoText.textContent = demoText.getAttribute('data-' + demoLang);
+            
+            // Add animation
+            [demoTitle, demoDesc, demoText].forEach(el => {
+                el.style.opacity = '0';
+                setTimeout(() => {
+                    el.style.transition = 'opacity 0.3s';
+                    el.style.opacity = '1';
+                }, 50);
+            });
+        });
+    </script>
+</body>
+</html>

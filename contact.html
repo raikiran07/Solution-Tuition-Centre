@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Book Free Demo | SOLUTION Tuition Centre Guwahati</title>
+    <meta name="description" content="Get in touch with SOLUTION Tuition Centre, Guwahati. Book a free demo class. Located in Sarania Hills. Call now for enrollment!">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1>SOLUTION TUITION CENTRE</h1>
+                <p class="tagline" data-en="Excellence in Education" data-as="শিক্ষাত উৎকৰ্ষতা">Excellence in Education</p>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-en="Home" data-as="মূল পৃষ্ঠা">Home</a></li>
+                <li><a href="about.html" data-en="About Us" data-as="আমাৰ বিষয়ে">About Us</a></li>
+                <li><a href="programs.html" data-en="Programs" data-as="পাঠ্যক্ৰম">Programs</a></li>
+                <li><a href="contact.html" class="active" data-en="Contact Us" data-as="যোগাযোগ">Contact Us</a></li>
+                <li><a href="tel:+91XXXXXXXXXX" class="btn-call"><i class="fas fa-phone"></i> <span data-en="Call Us Now" data-as="এতিয়াই ফোন কৰক">Call Us Now</span></a></li>
+                <li class="language-switcher">
+                    <button id="languageToggle" class="lang-btn" aria-label="Switch Language">
+                        <i class="fas fa-language"></i> <span id="currentLang">অসমীয়া</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 data-en="Contact Us" data-as="যোগাযোগ কৰক">Contact Us</h1>
+            <p data-en="We're here to answer your questions and help your child succeed" data-as="আমি আপোনাৰ প্ৰশ্নৰ উত্তৰ দিবলৈ আৰু আপোনাৰ সন্তানক সফল হোৱাত সহায় কৰিবলৈ ইয়াত আছো">We're here to answer your questions and help your child succeed</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-left">
+                    <h2 data-en="Get In Touch" data-as="যোগাযোগ কৰক">Get In Touch</h2>
+                    <p data-en="Fill out the form and our team will get back to you within 24 hours." data-as="ফৰ্মটো পূৰণ কৰক আৰু আমাৰ দলে 24 ঘণ্টাৰ ভিতৰত আপোনাৰ সৈতে যোগাযোগ কৰিব।">Fill out the form and our team will get back to you within 24 hours.</p>
+                    
+                    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="parent-name">Parent's Name *</label>
+                            <input type="text" id="parent-name" name="parent-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="class">Student's Class *</label>
+                            <select id="class" name="class" required>
+                                <option value="">Select Class</option>
+                                <option value="1">Class 1</option>
+                                <option value="2">Class 2</option>
+                                <option value="3">Class 3</option>
+                                <option value="4">Class 4</option>
+                                <option value="5">Class 5</option>
+                                <option value="6">Class 6</option>
+                                <option value="7">Class 7</option>
+                                <option value="8">Class 8</option>
+                                <option value="9">Class 9</option>
+                                <option value="10">Class 10</option>
+                                <option value="11">Class 11</option>
+                                <option value="12">Class 12</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="school">Current School Name</label>
+                            <input type="text" id="school" name="school">
+                        </div>
+                        <div class="form-group">
+                            <label for="subjects">Subject of Interest</label>
+                            <input type="text" id="subjects" name="subjects" placeholder="e.g., Mathematics, Science">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-time">Preferred Contact Time</label>
+                            <select id="contact-time" name="contact-time">
+                                <option value="">Select Time</option>
+                                <option value="morning">Morning (9 AM - 12 PM)</option>
+                                <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
+                                <option value="evening">Evening (4 PM - 8 PM)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="challenges">Specific Challenges Student Facing</label>
+                            <textarea id="challenges" name="challenges" rows="3" placeholder="Tell us about any specific areas where your child needs help"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Message</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Request Callback</button>
+                    </form>
+                </div>
+
+                <div class="contact-right">
+                    <div class="contact-info-box">
+                        <h3 data-en="Contact Information" data-as="যোগাযোগৰ তথ্য">Contact Information</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong data-en="Address:" data-as="ঠিকনা:">Address:</strong>
+                                <p>House No - 8, Arohan Path<br>South Sarania, Sarania Hills<br>Guwahati, Assam 781007</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong data-en="Phone:" data-as="ফোন:">Phone:</strong>
+                                <p><a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>WhatsApp:</strong>
+                                <p><a href="https://wa.me/91XXXXXXXXXX">+91-XXXXXXXXXX</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong data-en="Email:" data-as="ইমেইল:">Email:</strong>
+                                <p><a href="mailto:info@solutiontution.com">info@solutiontution.com</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong data-en="Hours:" data-as="সময়:">Hours:</strong>
+                                <p data-en="Open 24 hours (for inquiries)" data-as="24 ঘণ্টা খোলা (অনুসন্ধানৰ বাবে)">Open 24 hours (for inquiries)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="directions-box">
+                        <h3 data-en="Directions" data-as="দিশ">Directions</h3>
+                        <ul>
+                            <li><strong data-en="From Ulubari Flyover:" data-as="উলুবাৰী ফ্লাইঅ'ভাৰৰ পৰা:">From Ulubari Flyover:</strong> <span data-en="10 minutes" data-as="10 মিনিট">10 minutes</span></li>
+                            <li><strong data-en="From Guwahati Railway Station:" data-as="গুৱাহাটী ৰেলৱে ষ্টেচনৰ পৰা:">From Guwahati Railway Station:</strong> <span data-en="15 minutes" data-as="15 মিনিট">15 minutes</span></li>
+                            <li><strong data-en="Landmark:" data-as="চিহ্ন:">Landmark:</strong> <span data-en="Near Zoo Road Tiniali" data-as="চিৰিয়াখানা ৰোড টিনিয়ালিৰ ওচৰত">Near Zoo Road Tiniali</span></li>
+                        </ul>
+                        <a href="https://goo.gl/maps/XXXXX" target="_blank" class="btn btn-secondary" data-en="Get Directions" data-as="দিশ লওক">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.2662816969834!2d91.76046731502936!3d26.177726983443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5bb4c707478d%3A0x595d8a35c00c4c5!2sSOLUTION%20Tuition%20Centre!5e0!3m2!1sen!2sin!4v1234567890"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </section>
+
+    <!-- FAQs -->
+    <section class="faqs">
+        <div class="container">
+            <h2 class="section-title" data-en="Frequently Asked Questions" data-as="সঘনাই সোধা প্ৰশ্ন">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What are your class timings?</h3>
+                    <p>We offer flexible timings to accommodate students' school schedules. Classes are available throughout the day and evening.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you provide home tuition?</h3>
+                    <p>Yes, we provide both center-based and home tuition services across Guwahati.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is your fee structure?</h3>
+                    <p>Fees vary based on class, subjects, and format (individual/group). Contact us for customized packages.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you offer demo classes?</h3>
+                    <p>Yes! We offer free demo classes so students can experience our teaching methodology before enrolling.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Which boards do you cater to?</h3>
+                    <p>We provide coaching for CBSE, ICSE, and Assam State Board students.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do you ensure quality teaching?</h3>
+                    <p>Our faculty undergoes regular training, and we maintain small batch sizes for personalized attention. We also conduct regular assessments to track progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SOLUTION TUITION CENTRE</h3>
+                    <p class="footer-tagline" data-en="Excellence in Education" data-as="শিক্ষাত উৎকৰ্ষতা">Excellence in Education</p>
+                    <p data-en="Guwahati's Most Trusted Home Tuition" data-as="গুৱাহাটীৰ সৰ্বাধিক বিশ্বাসযোগ্য গৃহ শিক্ষা">Guwahati's Most Trusted Home Tuition</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 data-en="Quick Links" data-as="দ্ৰুত লিংক">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-as="মূল পৃষ্ঠা">Home</a></li>
+                        <li><a href="about.html" data-en="About Us" data-as="আমাৰ বিষয়ে">About Us</a></li>
+                        <li><a href="programs.html" data-en="Our Programs" data-as="আমাৰ পাঠ্যক্ৰম">Our Programs</a></li>
+                        <li><a href="contact.html" data-en="Contact Us" data-as="যোগাযোগ">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-en="Our Programs" data-as="আমাৰ পাঠ্যক্ৰম">Our Programs</h4>
+                    <ul>
+                        <li><a href="programs.html#primary" data-en="Primary Classes (1-5)" data-as="প্ৰাথমিক শ্ৰেণী (1-5)">Primary Classes (1-5)</a></li>
+                        <li><a href="programs.html#middle" data-en="Middle School (6-8)" data-as="মধ্য বিদ্যালয় (6-8)">Middle School (6-8)</a></li>
+                        <li><a href="programs.html#secondary" data-en="Secondary (9-10)" data-as="মাধ্যমিক (9-10)">Secondary (9-10)</a></li>
+                        <li><a href="programs.html#senior" data-en="Senior Secondary (11-12)" data-as="উচ্চতৰ মাধ্যমিক (11-12)">Senior Secondary (11-12)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-en="Contact Info" data-as="যোগাযোগৰ তথ্য">Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> House No - 8, Arohan Path<br>South Sarania, Sarania Hills<br>Guwahati - 781007</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@solutiontution.com">info@solutiontution.com</a></p>
+                    <p><i class="fas fa-clock"></i> <span data-en="Open: 24/7 (For Inquiries)" data-as="খোলা: 24/7 (অনুসন্ধানৰ বাবে)">Open: 24/7 (For Inquiries)</span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="© 2025 SOLUTION Tuition Centre. All Rights Reserved." data-as="© 2025 SOLUTION টিউচন চেণ্টাৰ। সৰ্বস্বত্ব সংৰক্ষিত।">&copy; 2025 SOLUTION Tuition Centre. All Rights Reserved.</p>
+                <p data-en="Google Rating: ⭐⭐⭐⭐⭐ 5.0 (93 Reviews)" data-as="গুগল ৰেটিং: ⭐⭐⭐⭐⭐ 5.0 (93 টা পৰ্যালোচনা)">Google Rating: ⭐⭐⭐⭐⭐ 5.0 (93 Reviews)</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20inquire%20about%20tuition" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script src="router.js"></script>
+</body>
+</html>

@@ -13,9 +13,13 @@ class SPARouter {
         // Register routes
         this.registerRoute('/', 'index.html');
         this.registerRoute('/index.html', 'index.html');
+        this.registerRoute('/index', 'index.html');
         this.registerRoute('/about.html', 'about.html');
+        this.registerRoute('/about', 'about.html');
         this.registerRoute('/programs.html', 'programs.html');
+        this.registerRoute('/programs', 'programs.html');
         this.registerRoute('/contact.html', 'contact.html');
+        this.registerRoute('/contact', 'contact.html');
 
         // Handle browser back/forward buttons
         window.addEventListener('popstate', (e) => {
@@ -34,14 +38,32 @@ class SPARouter {
             }
         });
 
-        // Load initial page
-        const currentPath = window.location.pathname;
-        const page = currentPath === '/' ? 'index.html' : currentPath.substring(1);
-        this.loadPage(page, false);
+        // Load initial page based on current URL
+        this.loadInitialPage();
     }
 
     registerRoute(path, page) {
         this.routes[path] = page;
+    }
+
+    loadInitialPage() {
+        const currentPath = window.location.pathname;
+        let page = 'index.html';
+
+        // Map URL paths to HTML files
+        if (currentPath === '/' || currentPath === '/index' || currentPath === '/index.html') {
+            page = 'index.html';
+        } else if (currentPath === '/about' || currentPath === '/about.html') {
+            page = 'about.html';
+        } else if (currentPath === '/programs' || currentPath === '/programs.html') {
+            page = 'programs.html';
+        } else if (currentPath === '/contact' || currentPath === '/contact.html') {
+            page = 'contact.html';
+        } else if (currentPath.endsWith('.html')) {
+            page = currentPath.substring(1);
+        }
+
+        this.loadPage(page, false);
     }
 
     shouldIntercept(link) {
@@ -64,10 +86,29 @@ class SPARouter {
     }
 
     async navigate(href) {
-        const page = href === '/' ? 'index.html' : href;
+        // Normalize the href to get the page file
+        let page = 'index.html';
+        let urlPath = href;
+
+        if (href === '/' || href === '/index' || href === '/index.html') {
+            page = 'index.html';
+            urlPath = '/';
+        } else if (href === '/about' || href === '/about.html') {
+            page = 'about.html';
+            urlPath = '/about';
+        } else if (href === '/programs' || href === '/programs.html') {
+            page = 'programs.html';
+            urlPath = '/programs';
+        } else if (href === '/contact' || href === '/contact.html') {
+            page = 'contact.html';
+            urlPath = '/contact';
+        } else if (href.endsWith('.html')) {
+            page = href;
+            urlPath = href.replace('.html', '');
+        }
         
-        // Update URL without reload
-        window.history.pushState({ page }, '', href);
+        // Update URL without reload (use clean URL)
+        window.history.pushState({ page }, '', urlPath);
         
         // Load the page content
         await this.loadPage(page, true);
